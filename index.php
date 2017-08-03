@@ -17,12 +17,12 @@ Config::init($configValues);
 
 require 'db/driver.mysql.php';
 require 'lib/class.User.php';
+require 'lib/class.Template.php';
 
 $user = new User($db);
 
-if($user->isUserLogin())
-{
+if ($user->isUserLogin()) {
+    $template->load('dashboard.php');
+} else {
+    $template->load('login.php');
 }
-else {
-}
-
