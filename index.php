@@ -10,8 +10,7 @@ session_start();
 
 // load config
 
-$configValues = require 'config/config.php';
-Config::init($configValues);
+require 'config/config.php';
 
 // load libs
 
