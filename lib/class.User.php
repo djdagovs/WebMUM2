@@ -3,7 +3,7 @@
 class User
 {
     public $UID;
-    public $USERNAME;
+    public $EMAIL;
     public $PASSWORD;
 
     public function __construct($db)
@@ -18,5 +18,10 @@ class User
         } else {
             return false;
         }
+    }
+
+    public function login()
+    {
+        return false;
     }
 }
