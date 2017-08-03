@@ -15,6 +15,7 @@ $config = [
             "mysql_user"    => "vmail",
             "mysql_password"    => "vmail",
             "mysql_database"    => "vmail",
+            "admin_mail"        => array("mail@example.de","mail2@example.de"),
             "enable_mailbox_limits" => false,
             "password_hash_algorithm"   => "SHA-512",
             "password_min_length"   => 8,
