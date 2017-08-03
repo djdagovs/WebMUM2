@@ -16,12 +16,16 @@ require 'config/config.php';
 
 require 'db/driver.mysql.php';
 require 'lib/class.User.php';
-require 'lib/class.Template.php';
 
 $user = new User($db);
 
 if ($user->isUserLogin()) {
-    $template->load('dashboard.php');
+    if (isset($_GET["go"])) {
+        switch ($_GET["go"]) {
+        }
+    } else {
+        require 'dashboard.php';
+    }
 } else {
-    $template->load('login.php');
+    require 'includes/login.php';
 }
