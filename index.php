@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // check if there is a config file
 
@@ -7,23 +8,21 @@
         die();
     }
 
-// load confis & libs
+// load config
 
-require 'config/config.php';
+$configValues = require 'config/config.php';
+Config::init($configValues);
+
+// load libs
+
 require 'db/driver.mysql.php';
-require 'lib/AltoRouter.php';
 require 'lib/class.User.php';
 
-$router = new AltoRouter();
 $user = new User($db);
-
-// load login
 
 if($user->isUserLogin())
 {
-    $router->map( 'GET', '/', 'render_dashboard', 'views/dashboard.php' );
 }
 else {
-    $router->map( 'GET', '/', 'render_login', 'views/login.php' );
 }
 

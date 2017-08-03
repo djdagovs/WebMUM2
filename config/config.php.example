@@ -9,7 +9,7 @@
 //                                                                      //
 //////////////////////////////////////////////////////////////////////////
 
-$config = [
+return array(
             "base_url"  => "http://localhost/webmum",
             "mysql_host"    => "localhost",
             "mysql_user"    => "vmail",
@@ -20,4 +20,4 @@ $config = [
             "password_hash_algorithm"   => "SHA-512",
             "password_min_length"   => 8,
             "log_path"  => "log/"
-            ];
+            );
