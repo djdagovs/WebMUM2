@@ -2,7 +2,7 @@
 
 This is a GUI Web Interface to configure a Postfix & Dovecot Mailserver.
 
-This GUI is not only working with one setup. It based on Thomas' Leister Tutorial for the [Debian Stretch Mailserver](https://thomas-leister.de/mailserver-debian-stretch/), but you can use it with every setup.
+This GUI is not only working with one setup. It based on Thomas Leister' Tutorial for the [Debian Stretch Mailserver](https://thomas-leister.de/mailserver-debian-stretch/), but you can use it with every setup.
 
 Only the database Layout is important.
 
