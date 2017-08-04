@@ -15,8 +15,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Domains <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="index.php?domain=view">View</a></li>
-            <li><a href="index.php?domain=add">Add</a></li>
+            <li><a href="index.php?go=domain">View</a></li>
+            <li><a href="index.php?go=domainAdd">Add</a></li>
           </ul>
         </li>
         <li class="dropdown">
