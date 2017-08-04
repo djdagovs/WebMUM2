@@ -9,6 +9,7 @@
 <meta name="author" content="WebMUM2">
 
 <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="shortcut icon" type="image/png" href="img/logoTiny.png"/>
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>

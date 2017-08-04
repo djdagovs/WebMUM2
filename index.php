@@ -16,8 +16,10 @@ require 'config/config.php';
 
 require 'db/driver.mysql.php';
 require 'lib/class.User.php';
+require 'lib/class.Mail.php';
 
 $user = new User($db);
+$mail = new Mail($db);
 
 if(isset($_GET['logout']))
 {

@@ -1,5 +1,12 @@
 <div class="container">
     <div class="row" style="margin-top:30px;">
+        <div class="col-md-4 col-md-offset-4" style="text-align:center;">
+            <img src="img/logoBig.png" alt="Logo" />
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" style="margin-top:30px;">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
