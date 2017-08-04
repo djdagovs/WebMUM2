@@ -22,8 +22,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounts <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">View</a></li>
-            <li><a href="#">Add</a></li>
+            <li><a href="index.php?go=account">View</a></li>
+            <li><a href="index.php?go=accountAdd">Add</a></li>
           </ul>
         </li>
         <li class="dropdown">
