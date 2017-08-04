@@ -9,6 +9,9 @@ if(isset($_GET["go"]))
 {
     switch($_GET["go"])
     {
+        case 'domain';
+            require 'views/domain.tpl';
+        break;
         case 'domainAdd';
             require 'views/domainAdd.tpl';
         break;

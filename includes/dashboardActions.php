@@ -16,3 +16,14 @@ if (isset($_POST["domainNew"])) {
         require 'views/error.domainNoInput.tpl';
     }
 }
+
+if (isset($_GET['domainDel'])) {
+    $mail->DID = $_GET['domainDel'];
+    if ($mail->domainDependencies()) {
+        require 'views/error.domainDependencies.tpl';
+    } else {
+        if ($mail->deleteDomain()) {
+            require 'views/success.domainDelete.tpl';
+        }
+    }
+}
