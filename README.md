@@ -1,14 +1,36 @@
-# WebMUM2
+WebMUM2
+=======
 
 This is a GUI Web Interface to configure a Postfix & Dovecot Mailserver.
 
-This GUI is not only working with one setup. It based on Thomas Leister' Tutorial for the [Debian Stretch Mailserver](https://thomas-leister.de/mailserver-debian-stretch/), but you can use it with any setup.
+This GUI is not only working with one setup. It based on Thomas Leister' Tutorial for the [Debian Stretch Mailserver], but you can use it with any setup.
 
 Only the database Layout is important.
 
-## Database Layout
+Installation
+------------
 
-```sql
+First of all check your database layout, if it fetch this layout.
+
+Then copy the config example file:
+
+    `cp config/config.php.example config/config.php`
+
+Then change the following parts
+
+```php
+    "base_url"  => "http://localhost/webmum",
+    "mysql_host"    => "localhost",
+    "mysql_user"    => "vmail",
+    "mysql_password"    => "vmail",
+    "mysql_database"    => "vmail",
+    "admin_mail"        => array("mail@example.de","mail2@example.de"),
+```
+
+Database Layout
+---------------
+
+``` {.sql}
 CREATE TABLE `domains` (
     `id` int unsigned NOT NULL AUTO_INCREMENT,
     `domain` varchar(255) NOT NULL,
@@ -47,3 +69,5 @@ CREATE TABLE `tlspolicies` (
     UNIQUE KEY (`domain`)
 );
 ```
+
+  [Debian Stretch Mailserver]: https://thomas-leister.de/mailserver-debian-stretch/
