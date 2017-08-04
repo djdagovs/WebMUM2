@@ -20,11 +20,10 @@ require 'lib/class.User.php';
 $user = new User($db);
 
 if ($user->isUserLogin()) {
-    if (isset($_GET["go"])) {
-        switch ($_GET["go"]) {
-        }
+    if (in_array($config['admin_mail'], $_SESSION["usermail"])) {
+        require 'includes/dashboard.php';
     } else {
-        require 'dashboard.php';
+        require 'includes/changePassword.php';
     }
 } else {
     require 'includes/login.php';
