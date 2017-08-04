@@ -20,7 +20,7 @@ require 'lib/class.User.php';
 $user = new User($db);
 
 if ($user->isUserLogin()) {
-    if (in_array($config['admin_mail'], $_SESSION["usermail"])) {
+    if (in_array($_SESSION["usermail"], $config["admin_mail"])) {
         require 'includes/dashboard.php';
     } else {
         require 'includes/changePassword.php';

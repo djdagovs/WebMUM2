@@ -43,9 +43,41 @@ class User
         return false;
     }
 
+    private function getPasswordSchemaPrefix()
+    {
+        $map = array(
+            'SHA-256' => '$5$rounds=5000$',
+            'BLOWFISH' => '$2a$09$',
+            'SHA-512' => '$6$rounds=5000$',
+        );
+        include 'config/config.php';
+
+        $key = $config["password_hash_algorithm"];
+        if(!isset($map[$key])){
+            $key = 'SHA-512';
+        }
+        return $map[$key];
+    }
+
     public function checkPassword($password, $hash)
     {
         return crypt($password, $hash) === $hash;
+    }
+
+    public function generatePasswordHash()
+    {
+        if(function_exists('mt_rand')){
+            mt_srand(time());
+            $num = mt_rand(1, 100000);
+        }
+        else{
+            srand(time());
+            $num = rand(1, 100000);
+        }
+        $salt = base64_encode($num);
+        $schemaPrefix = $this->getPasswordSchemaPrefix();
+        $hash = crypt($this->PASSWORD, $schemaPrefix.$salt.'$');
+        return $hash;
     }
 
     public function userExists($username, $domain)
@@ -63,5 +95,24 @@ class User
         }
 
         return null;
+    }
+
+    public function changePassword()
+    {
+        $pwd = $this->generatePasswordHash();
+        try {
+            $stmt = $this->db->prepare('UPDATE accounts SET password = ? WHERE username = ? AND domain = ?');
+            $stmt->bindParam('1', $pwd);
+            $stmt->bindParam('2', $_SESSION['username']);
+            $stmt->bindParam('3', $_SESSION['domain']);
+            $stmt->execute();
+
+            return true;
+        } catch (PDOException $e) {
+            $e->getMessage();
+            return false;
+        }
+
+        return false;
     }
 }
