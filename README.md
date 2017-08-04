@@ -14,7 +14,9 @@ First of all check your database layout, if it fetch this layout.
 
 Then copy the config example file:
 
-    `cp config/config.php.example config/config.php`
+```bash
+cp config/config.php.example config/config.php
+```
 
 Then change the following parts
 
