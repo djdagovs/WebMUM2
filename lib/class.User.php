@@ -43,6 +43,17 @@ class User
         return false;
     }
 
+    public static function logout()
+    {
+        unset($_SESSION["username"]);
+        unset($_SESSION["domain"]);
+        unset($_SESSION["usermail"]);
+
+        if(session_status() === PHP_SESSION_ACTIVE){
+            session_destroy();
+        }
+    }
+
     private function getPasswordSchemaPrefix()
     {
         $map = array(

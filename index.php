@@ -19,6 +19,13 @@ require 'lib/class.User.php';
 
 $user = new User($db);
 
+if(isset($_GET['logout']))
+{
+    $user->logout();
+    header('Location: .');
+    die();
+}
+
 if ($user->isUserLogin()) {
     if (in_array($_SESSION["usermail"], $config["admin_mail"])) {
         require 'includes/dashboard.php';
