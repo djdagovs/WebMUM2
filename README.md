@@ -1,3 +1,5 @@
+![LOGO](https://github.com/beli3ver/WebMUM2/blob/master/img/logoBig.png?raw=true)
+
 WebMUM2
 =======
 
