@@ -16,7 +16,6 @@
                             <input class="form-control" placeholder="Password Repeat" name="password_repeat" type="password" value="">
                         </div>
                         <input class="btn btn-lg btn-primary btn-block" type="submit" value="Change Password">
-                        <a href="index.php?logout" class="btn btn-lg btn-warning btn-block">Logout</a>
                     </fieldset>
                     </form>
                 </div>

@@ -113,4 +113,5 @@ class Mail
             return false;
         }
     }
+
 }

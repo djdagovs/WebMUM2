@@ -1,6 +1,7 @@
 <?php
 
 require 'views/header.tpl';
+require 'views/userMenu.tpl';
 
 if (isset($_POST['password'])) {
     if ($_POST["password_repeat"] == $_POST["password"]) {

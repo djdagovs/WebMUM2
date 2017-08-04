@@ -20,7 +20,6 @@
                                 <td>'.$mailOut["domain"].'</td>
                                 <td>
                                     <a href="index.php?go=domain&domainDel='.$mailOut["id"].'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>&nbsp;
-                                    <a href="index.php?go=domainEdit&dID='.$mailOut["id"].'"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                 </td>
                             </tr>
                         ';
