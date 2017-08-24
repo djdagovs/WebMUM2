@@ -17,23 +17,28 @@ require 'config/config.php';
 require 'db/driver.mysql.php';
 require 'lib/class.User.php';
 require 'lib/class.Mail.php';
+require 'lib/AltoRouter.php';
 
+$router = new AltoRouter();
 $user = new User($db);
 $mail = new Mail($db);
 
-if(isset($_GET['logout']))
-{
+$router->map('GET', '/', function () {
+    if ($user->isUserLogin()) {
+        if (in_array($_SESSION["usermail"], $config["admin_mail"])) {
+            require 'includes/dashboard.php';
+        } else {
+            require 'includes/changePassword.php';
+        }
+    } else {
+        require 'includes/login.php';
+    }
+});
+
+$router->map('GET', '/logout', function () {
     $user->logout();
     header('Location: .');
     die();
-}
+});
 
-if ($user->isUserLogin()) {
-    if (in_array($_SESSION["usermail"], $config["admin_mail"])) {
-        require 'includes/dashboard.php';
-    } else {
-        require 'includes/changePassword.php';
-    }
-} else {
-    require 'includes/login.php';
-}
+$match = $router->match();

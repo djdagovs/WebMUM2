@@ -8,7 +8,7 @@ if (isset($_POST['email'])) {
     $user->PASSWORD = $_POST['password'];
 
     if ($user->login()) {
-        header('Location: index.php');
+        header('Location: .');
         die();
     } else {
         require 'views/error.login.tpl';

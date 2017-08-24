@@ -15,6 +15,12 @@ if(isset($_GET["go"]))
         case 'domainAdd';
             require 'views/domainAdd.tpl';
         break;
+        case 'account';
+            require 'views/account.tpl';
+        break;
+        case 'accountAdd';
+            require 'views/accountAdd.tpl';
+        break;
         default;
             header('Location: index.php');
         break;

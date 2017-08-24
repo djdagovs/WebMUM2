@@ -54,22 +54,6 @@ class User
         }
     }
 
-    private function getPasswordSchemaPrefix()
-    {
-        $map = array(
-            'SHA-256' => '$5$rounds=5000$',
-            'BLOWFISH' => '$2a$09$',
-            'SHA-512' => '$6$rounds=5000$',
-        );
-        include 'config/config.php';
-
-        $key = $config["password_hash_algorithm"];
-        if(!isset($map[$key])){
-            $key = 'SHA-512';
-        }
-        return $map[$key];
-    }
-
     public function checkPassword($password, $hash)
     {
         return crypt($password, $hash) === $hash;
@@ -86,8 +70,7 @@ class User
             $num = rand(1, 100000);
         }
         $salt = base64_encode($num);
-        $schemaPrefix = $this->getPasswordSchemaPrefix();
-        $hash = crypt($this->PASSWORD, $schemaPrefix.$salt.'$');
+        $hash = "{SHA512-CRYPT}". crypt($this->PASSWORD, "$6$$salt");
         return $hash;
     }
 

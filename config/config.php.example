@@ -9,7 +9,7 @@
 //                                                                      //
 //////////////////////////////////////////////////////////////////////////
 
-    $config = (
+    $config = array(
             "base_url"  => "http://localhost/webmum",
             "mysql_host"    => "localhost",
             "mysql_user"    => "vmail",
