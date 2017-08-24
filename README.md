@@ -34,7 +34,7 @@ Then change the following parts
 Database Layout
 ---------------
 
-``` {.sql}
+```sql
 CREATE TABLE `domains` (
     `id` int unsigned NOT NULL AUTO_INCREMENT,
     `domain` varchar(255) NOT NULL,
